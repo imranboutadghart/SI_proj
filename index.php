@@ -1,3 +1,91 @@
+<?php
+class product
+{
+	public $id = null;
+	public $src = null;
+	public $description = null;
+	public $price = null;
+	function __construct($n_id, $n_src, $n_description, $n_price) {
+		$this->id = $n_id;
+		$this->src = $n_src;
+		$this->description = $n_description;
+		$this->price = $n_price;
+	}
+	function get_product() {
+		return $this;
+	}
+}
+
+class node
+{
+	public $data = null;
+	public $next = null;
+
+	function __construct($new_data) {
+		$this->data = $new_data;
+		$this->next = null;
+	}
+	function get_node()
+	{
+		return $this->data;
+	}
+}
+class linked_list
+{
+	private $head;
+	private $last;
+	function __construct() {
+		$this->head = null;
+		$this->last = null;
+	}
+	function add_to_list($data)
+	{
+		if($this->head == null)
+		{
+			$this->head = new Node($data);
+			$this->last = $this->head;
+		}
+		else {
+			$this->last->next = new Node($data);
+		}
+	}
+	function delete_node_with_id($id)
+	{
+		if ($this->head == null)
+		{
+			return;
+		}
+		while($this->head && $this->head->data->id == $id)
+		{
+			$this->head = $this->head->next;
+		}
+		if ($this->head == null)
+		{
+			return;
+		}
+		$prev = $this->head;
+		while($prev->next)
+		{
+			if ($prev->next->data->id == id) {
+				$prev->next = $prev->next->next;
+			}
+		}
+	}
+
+}
+
+	$product = new product(1, "", "test", 70);
+	echo'
+	<div class="product" id='.$product->id.'>
+		<img src="pizza.png" class="image" alt="logo">
+		<div class="description">'. $product->description .'</div>
+		<span class="price">'. $product->price .'</span>
+		<button class="add-to-cart">add to cart</button>
+	</div>'
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
