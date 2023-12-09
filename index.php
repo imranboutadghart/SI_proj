@@ -1,10 +1,21 @@
 <?php
-include("database.php");
-include("classes.php");
+	include("classes.php");
+	//next code for connectinng to the server
+	$db_server = "localhost";
+	$db_user = "root";
+	$db_pass = "";
+	$db_name = "projectDB";
+	$conn = "";
+	try{
+		$conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
+	}
+	catch(mysqli_sql_exception)
+	{
+		echo"could not connect to database";
+	}
+	//connected here
 	$product = new product(1, "", "test", 70);
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,54 +39,19 @@ include("classes.php");
 	</header>
 	<div id="products">
 	<?php
+	$sql = "select * from products";
+	$res = mysqli_query($conn, $sql);
+	while ($row = mysqli_fetch_assoc($res))
+	{
+		$product = new product($row["p_id"], $row["p_image"], $row["p_name"], $row["p_price"]);
 		echo'
 		<div class="product" id='.$product->id.'>
-			<img src="pizza.png" class="image" alt="logo">
+			<img src='.$product->src.' class="image" alt="logo">
 			<div class="description">'. $product->description .'</div>
 			<span class="price">'. $product->price .'</span>
 			<button class="add-to-cart">add to cart</button>
-		</div>'
-		?><?php
-		echo'
-		<div class="product" id='.$product->id.'>
-			<img src="pizza.png" class="image" alt="logo">
-			<div class="description">'. $product->description .'</div>
-			<span class="price">'. $product->price .'</span>
-			<button class="add-to-cart">add to cart</button>
-		</div>'
-		?><?php
-		echo'
-		<div class="product" id='.$product->id.'>
-			<img src="pizza.png" class="image" alt="logo">
-			<div class="description">'. $product->description .'</div>
-			<span class="price">'. $product->price .'</span>
-			<button class="add-to-cart">add to cart</button>
-		</div>'
-		?><?php
-		echo'
-		<div class="product" id='.$product->id.'>
-			<img src="pizza.png" class="image" alt="logo">
-			<div class="description">'. $product->description .'</div>
-			<span class="price">'. $product->price .'</span>
-			<button class="add-to-cart">add to cart</button>
-		</div>'
-		?><?php
-		echo'
-		<div class="product" id='.$product->id.'>
-			<img src="pizza.png" class="image" alt="logo">
-			<div class="description">'. $product->description .'</div>
-			<span class="price">'. $product->price .'</span>
-			<button class="add-to-cart">add to cart</button>
-		</div>'
-		?>
-		<?php
-		echo'
-		<div class="product" id='.$product->id.'>
-			<img src="pizza.png" class="image" alt="logo">
-			<div class="description">'. $product->description .'</div>
-			<span class="price">'. $product->price .'</span>
-			<button class="add-to-cart">add to cart</button>
-		</div>'
+		</div>';
+	}
 		?>
 		<!-- Add more products as needed -->
 	</div>
@@ -84,3 +60,7 @@ include("classes.php");
 	<div class="shopping-cart">receipt:</div>
 </body>
 </html>
+
+<?php
+	mysqli_close($conn);
+?>
