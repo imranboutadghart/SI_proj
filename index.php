@@ -9,7 +9,7 @@
 	try{
 		$conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
 	}
-	catch(mysqli_sql_exception)
+	catch(mysqli_sql_exception $e)
 	{
 		echo"could not connect to database";
 	}
@@ -18,26 +18,28 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pizzeria</title>
-	<link rel="icon" type="image/png" href="pizzeria_logo.png"/>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="index.js"></script>
+	<link rel="icon" type="image/png" href="pizzeria_logo.png" />
+	<link rel="stylesheet" href="style.css">
+	<script defer src="index.js"></script>
 </head>
+
 <body>
 	<header>
 		<nav>
-            <a href="index.php">Home</a>
-            <a href="settings.php">Settings</a>
-            <a href="#">About Us</a>
-            <a href="#">Help</a>
-            <a href="#">Social Media</a>
-        </nav>
+			<a href="index.php">Home</a>
+			<a href="settings.php">Settings</a>
+			<a href="#">About Us</a>
+			<a href="#">Help</a>
+			<a href="#">Social Media</a>
+		</nav>
 	</header>
 	<div id="products">
-	<?php
+		<?php
 	$sql = "select * from products";
 	try {
 		$res = mysqli_query($conn, $sql);
@@ -82,6 +84,7 @@
 		<button type="submit" onclick="get_receipt()">get receipt</button>
 	</div>
 </body>
+
 </html>
 
 <?php
