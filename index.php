@@ -1,21 +1,6 @@
 <?php
 include("database.php");
-class product
-{
-	public $id = null;
-	public $src = null;
-	public $description = null;
-	public $price = null;
-	function __construct($n_id, $n_src, $n_description, $n_price) {
-		$this->id = $n_id;
-		$this->src = $n_src;
-		$this->description = $n_description;
-		$this->price = $n_price;
-	}
-	function get_product() {
-		return $this;
-	}
-}
+include("classes.php");
 	$product = new product(1, "", "test", 70);
 ?>
 
@@ -34,11 +19,11 @@ class product
 <body>
 	<header>
 		<nav>
-            <a href="home.html">Home</a>
-            <a href="settings.html">Settings</a>
-            <a href="about.html">About Us</a>
-            <a href="help.html">Help</a>
-            <a href="social.html">Social Media</a>
+            <a href="index.php">Home</a>
+            <a href="settings.php">Settings</a>
+            <a href="#">About Us</a>
+            <a href="#">Help</a>
+            <a href="#">Social Media</a>
         </nav>
 	</header>
 	<div id="products">
