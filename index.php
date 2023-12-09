@@ -1,5 +1,4 @@
 <?php
-	include("classes.php");
 	//next code for connectinng to the server
 	$db_server = "localhost";
 	$db_user = "root";
@@ -32,10 +31,9 @@
 	<header>
 		<nav>
 			<a href="index.php">Home</a>
-			<a href="settings.php">Settings</a>
-			<a href="#">About Us</a>
-			<a href="#">Help</a>
-			<a href="#">Social Media</a>
+			<a href="settings.html">Settings</a>
+			<a href="about.html">About Us</a>
+			<a href="help.html">Help</a>
 		</nav>
 	</header>
 	<div id="products">

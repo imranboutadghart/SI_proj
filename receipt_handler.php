@@ -1,6 +1,4 @@
 <?php
-    include("classes.php");
-
     // Database connection code
     $db_server = "localhost";
     $db_user = "root";
