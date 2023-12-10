@@ -14,7 +14,6 @@
 		echo"could not connect to database";
 	}
 	//connected here
-	$product = new product(1, "", "test", 70);
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +39,10 @@
 	<div id="products">
 	<?php
 	$sql = "select * from products";
-	$res = mysqli_query($conn, $sql);
+	try {
+		$res = mysqli_query($conn, $sql);
+	} catch (mysqli_sql_exception $th) {
+	}
 	while ($row = mysqli_fetch_assoc($res))
 	{
 		$product = new product($row["p_id"], $row["p_image"], $row["p_name"], $row["p_price"]);
@@ -55,9 +57,30 @@
 		?>
 		<!-- Add more products as needed -->
 	</div>
-	<div id="cart">    <!-- cart items drop here-->    <p>total<span id="total">0</span></p></div>
-	
-	<div class="shopping-cart">receipt:</div>
+
+	<div id="cart_container">
+		
+		<?php
+			try {
+				$rescaissier = mysqli_query($conn, "select * from employee");
+				$resreceipt = mysqli_query($conn, "select * from receipts order by receipt_id desc limit 1");
+			} catch (mysqli_sql_exception $th) {
+			}
+			$caissier = mysqli_fetch_assoc($rescaissier);
+			$receiptnbr = mysqli_fetch_assoc($resreceipt);
+			if ($receiptnbr == null)
+				$receiptnbr = 1;
+			else 
+				$receiptnbr = $receiptnbr["receipt_id"] + 1;
+			echo'<div>caissier : <span id="caissier" data-id="'.$caissier["emp_id"].'">'.$caissier["emp_name"].'</span>
+			<br>receipt #<span id="receipt_number">'.$receiptnbr.'</span></div>';
+		?>
+		<div id="cart">
+			<!-- cart items drop here-->
+		</div>
+		<p>total<span id="total">0</span>dh</p>
+		<button type="submit" onclick="get_receipt()">get receipt</button>
+	</div>
 </body>
 </html>
 

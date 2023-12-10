@@ -38,7 +38,7 @@ nav a:hover {
     margin: 20px;
 }
 
-#cart{
+#cart_container{
 	display:block;
 	margin: auto;
 	width: 30%;
@@ -65,7 +65,7 @@ nav a:hover {
     font-size: 1.5em;
 }
 
-button {
+button{
     background-color: #007bff;
     color: white;
     border: none;
@@ -87,4 +87,13 @@ button:hover {
     font-size: 2em;
     margin: 20px;
     color: #007bff;
+}
+
+@media print{
+	header, #products{
+		display: none;
+	}
+	#cart_container{
+		display: block;
+	}
 }

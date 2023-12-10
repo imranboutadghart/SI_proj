@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizzeria</title>
+	<link rel="icon" type="image/png" href="pizzeria_logo.png"/>
+    <link rel="stylesheet" href="C:\xampp\htdocs\website\print.css">
+    <meta http-equiv="refresh" content="1">
+	<script defer src="index.js"></script>
+</head>
+<body>
+
+	<div id="cart_container">
+		<div class="general">
+			<h2 class="title">Pizerria de lux</h2>
+			<h3 class="address">Marrakesh Semlalia, bab krk</h3>
+			<h3 class="tel">0612312345</h3>
+			<p class="line">-----------------------------------------------------------</p>
+		</div>
+		<div><h4>caissier : <span id="caissier" data-id="1">Mr Youness</span>
+		<br>Ticket #<span id="receipt_number">1</span></h4></div>
+		<div id="cart">
+			<!-- cart items drop here-->
+		</div>
+		<p>total<span id="total">0</span>dh</p>
+		<button type="submit" onclick="get_receipt()">get receipt</button>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+#cart_container{
+	display: flex;
+	background-color: rgba(20,20,20,0.2);
+	width: 10cm;
+	margin: auto;
+	padding: 1cm;
+	flex-direction: column;
+	align-items: center;
+	gap: -30px;
+}
+.general{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.general>*{
+	margin: 5px;
+}
+#cart_container	h4{
+	margin: 0;
+}

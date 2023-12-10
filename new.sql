@@ -12,7 +12,7 @@ create table
 	);
 create table
 	purchase_rows (
-		pr_id int primary key,
+		pr_id int primary key auto_increment,
 		amount int not null,
 		product_id int,
 		foreign key (product_id) references products (p_id)
@@ -28,8 +28,8 @@ create table
 	receipt_rows (
 		pr_id int,
 		receipt_id int,
-		foreign key pr_id references purchase_rows (pr_id),
-		foreign key receipt_id references receipts (receipt_id)
+		foreign key(pr_id) references purchase_rows (pr_id),
+		foreign key(receipt_id) references receipts (receipt_id)
 	);
 
 insert into employee(emp_id, emp_name)
