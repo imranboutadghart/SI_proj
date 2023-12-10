@@ -23,9 +23,10 @@ function addToCart(event) {
 		cartItem.setAttribute('data-id', productid);
 		cartItem.classList.add('cart_item');
 		cartItem.innerHTML = `
-			${productName} - $${price} x <span class="quantity">1</span>
-			<button class="remove-one">Remove One</button>
-			<button class="remove-all">Remove All</button>
+			<p class="line hidden">-----------------------------------------------------------</p><br>
+			<span class="quantity">1</span> x ${productName} <span class="price">$${price}</span>
+			<button class="remove-one no-print">Remove One</button>
+			<button class="remove-all no-print">Remove All</button>
 		`;
 
 		cartItem.querySelector('.remove-one').addEventListener('click', () => removeFromCart(cartItem, price));
@@ -93,8 +94,10 @@ function get_receipt(){
 		// Set the total to 0
 		document.querySelector("#total").textContent = "0";
     };
-
+	var time = new Date();
+	time = time.toLocaleString();
+	document.querySelector("#receipt_time").innerHTML = time;
     // Send the JSON data
     xhr.send(jsonData);
-	
+	window.print();
 }

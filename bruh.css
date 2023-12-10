@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
-    color: #333;
+    color: #111111;
     line-height: 1.6;
 }
 
@@ -88,12 +88,63 @@ button:hover {
     margin: 20px;
     color: #007bff;
 }
-
+.hidden{
+	display: none;
+}
+.cart_item{
+	
+}
+.price{
+	margin-left: auto;
+}
 @media print{
+	@page{
+		size: auto;
+		margin: 0;
+	}
+	@page :footer{
+		display: none;
+	}
+	@page :header {
+		display: none;
+	}
+	*{
+		color: #111111;
+	}
+	#total{
+		color: #161125;
+	}
+	.hidden{
+		display: unset;
+	}
+	.no-print{
+		display: none;
+	}
 	header, #products{
 		display: none;
 	}
 	#cart_container{
 		display: block;
+	}
+	#cart_container{
+		display: flex;
+		background-color: rgba(20,20,20,0.2);
+		width: 100%;
+		margin: auto;
+		padding: 1cm;
+		flex-direction: column;
+		align-items: center;
+		gap: -30px;
+	}
+	#general{
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#general *{
+		margin: 5px;
+	}
+	#cart_container	h4{
+		margin: 0;
 	}
 }
