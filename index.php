@@ -23,7 +23,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pizzeria</title>
 	<link rel="icon" type="image/png" href="pizzeria_logo.png" />
-	<link rel="stylesheet" href="bruh.css">
+	<link rel="stylesheet" href="style.css">
 	<script defer src="index.js"></script>
 </head>
 
@@ -31,7 +31,6 @@
 	<header>
 		<nav>
 			<a href="index.php">Home</a>
-			<a href="settings.html">Settings</a>
 			<a href="about.html">About Us</a>
 			<a href="help.html">Help</a>
 		</nav>
@@ -48,8 +47,10 @@
 		echo'
 		<div class="product" id='.$row["p_id"].'>
 			<img src='.$row["p_image"].' class="image" alt="logo">
-			<div class="description">'. $row["p_name"] .'</div>
-			<span class="price">'. $row["p_price"] .'</span>
+			<div class="desc-price">
+				<span class="description">'. $row["p_name"] .'</span>
+				<span class="price">'. $row["p_price"] .'</span>
+			</div>
 			<button class="add-to-cart">add to cart</button>
 		</div>';
 	}

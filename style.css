@@ -49,24 +49,28 @@ nav a:hover {
 
 }
 
-.product, .cart-item {
+.product {
 	display: inline-block;
     border: 1px solid #343a40;
     margin: 10px;
     padding: 20px;
     box-sizing: border-box;
     position: relative;
-    background-color: white;
+    background-color: rgb(218, 207, 207);
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.product h2, .cart-item h2 {
+.qty-price .price{
+	margin-left: auto;
+}
+.product h2 {
     margin: 0 0 10px;
     font-size: 1.5em;
 }
 
 button{
     background-color: #007bff;
+	width: 100%;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -91,9 +95,13 @@ button:hover {
 .hidden{
 	display: none;
 }
-.price{
-	margin-left: auto;
+.desc-price{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: relative;
 }
+
 @media print{
 	@page{
 		size: auto;
@@ -144,4 +152,5 @@ button:hover {
 	#cart_container	h4{
 		margin: 0;
 	}
+
 }
