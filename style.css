@@ -18,14 +18,14 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
 nav a {
-    color: white;
+	color: white;
 	padding: 10px;
 	border-radius: 10px;
 	background-color: #2c3e7069;
@@ -33,6 +33,13 @@ nav a {
     font-size: 1.2em;
 	transition: 0.5s ease-in-out;
 	transition-property: scale, color ,background-color;
+}
+
+.logo{
+	padding: 0;
+	height: 50px;
+	width: 50px;
+	background-color: unset;
 }
 
 nav a:hover {
