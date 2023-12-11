@@ -31,12 +31,14 @@ nav a {
 	background-color: #2c3e7069;
     text-decoration: none;
     font-size: 1.2em;
+	transition: 0.5s ease-in-out;
+	transition-property: scale, color ,background-color;
 }
 
 nav a:hover {
-    color: #6ba5e4;
+    color: #6be499;
 	background-color: #2c3e70aa;
-
+	scale: 1.1;
 }
 
 #products{
@@ -63,10 +65,17 @@ nav a:hover {
     padding: 20px;
     box-sizing: border-box;
     position: relative;
-    background-color: rgba(218, 207, 207, 0.1);
+	background-color: rgba(32, 153, 131, 0.1);
 	color: #fafafa;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 	border-radius: 20px;
+	transition: 0.4s ease-in-out;
+	transition-property: scale, background-color;
+}
+.product:hover{
+	scale: 1.02;
+	background-color: rgba(32, 153, 131, 0.5);
+
 }
 
 .qty-price .price{
@@ -90,10 +99,13 @@ button{
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
+	transition: 0.3s ease-in-out;
+	transition-property: scale, background-color;
 }
 
 button:hover {
     background-color: #0056b3;
+	scale: 1.01;
 }
 
 #total {
