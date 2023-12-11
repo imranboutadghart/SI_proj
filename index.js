@@ -71,7 +71,7 @@ function get_receipt(){
     // Add receipt number and employee ID to the data
     let employeeId = document.querySelector("#caissier").getAttribute("data-id");
     let receiptNumber = parseInt(document.querySelector("#receipt_number").innerHTML); 
-    data.push({receiptNumber: receiptNumber, employeeId: employeeId});
+    data.push({receiptNumber: receiptNumber, employeeId: employeeId, total: document.querySelector("#total").innerHTML});
 	document.querySelector("#receipt_number").innerHTML = receiptNumber + 1;
     // Convert the data array to JSON
     let jsonData = JSON.stringify(data);

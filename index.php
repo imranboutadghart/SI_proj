@@ -22,7 +22,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pizzeria</title>
-	<link rel="icon" type="image/png" href="pizzeria_logo.png" />
+	<link rel="icon" type="image/png" href="assets/pizzeria_logo.png" />
 	<link rel="stylesheet" href="style.css">
 	<script defer src="index.js"></script>
 </head>

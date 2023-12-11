@@ -19,8 +19,10 @@
     // Get the receipt number and employee ID
     $receiptNumber = end($data)['receiptNumber'];
     $employeeId = end($data)['employeeId'];
+	$total = end($data)['total'];
+	// SQL query
 
-	$sql = "INSERT INTO receipts (receipt_id, receipt_date,emp_id) VALUES ('$receiptNumber', now(),'$employeeId')";
+	$sql = "INSERT INTO receipts (receipt_id, receipt_date, emp_id, total) VALUES ('$receiptNumber', now(),'$employeeId', '$total')";
     // Remove the last element from the array
 	try {
 		$conn->query($sql);
