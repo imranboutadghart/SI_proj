@@ -1,0 +1,100 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizzeria</title>
+	<link rel="icon" type="image/png" href="pizzeria_logo.png" />
+	<link rel="stylesheet" href="test.css">
+	<script defer src="index.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<a href="index.php">Home</a>
+			<a href="about.html">About Us</a>
+			<a href="help.html">Help</a>
+		</nav>
+	</header>
+	<div id="products">
+		
+		<div class="product" id=1>
+			<img src=assets/4seasons.jpg class="image" alt="logo">
+			<div class="desc-price">
+				<span class="description">pizza 4seasons</span>
+				<span class="price">100</span>
+			</div>
+			<button class="add-to-cart">add to cart</button>
+		</div>
+		<div class="product" id=2>
+			<img src=assets/cheese.jpg class="image" alt="logo">
+			<div class="desc-price">
+				<span class="description">pizza cheese</span>
+				<span class="price">60</span>
+			</div>
+			<button class="add-to-cart">add to cart</button>
+		</div>
+		<div class="product" id=3>
+			<img src=assets/margarita.jpg class="image" alt="logo">
+			<div class="desc-price">
+				<span class="description">pizza margarita</span>
+				<span class="price">40</span>
+			</div>
+			<button class="add-to-cart">add to cart</button>
+		</div>
+		<div class="product" id=4>
+			<img src=assets/peperoni.jpg class="image" alt="logo">
+			<div class="desc-price">
+				<span class="description">pizza peperoni</span>
+				<span class="price">60</span>
+			</div>
+			<button class="add-to-cart">add to cart</button>
+		</div>
+		<div class="product" id=5>
+			<img src=assets/poulet.jpg class="image" alt="logo">
+			<div class="desc-price">
+				<span class="description">pizza poulet</span>
+				<span class="price">80</span>
+			</div>
+			<button class="add-to-cart">add to cart</button>
+		</div>
+		<div class="product" id=6>
+			<img src=assets/thon.jpg class="image" alt="logo">
+			<div class="desc-price">
+				<span class="description">pizza thon</span>
+				<span class="price">40</span>
+			</div>
+			<button class="add-to-cart">add to cart</button>
+		</div>
+		<div class="product" id=7>
+			<img src=assets/vegetarian.jpg class="image" alt="logo">
+			<div class="desc-price">
+				<span class="description">pizza vegetarian</span>
+				<span class="price">50</span>
+			</div>
+			<button class="add-to-cart">add to cart</button>
+		</div>		<!-- Add more products as needed -->
+	</div>
+
+	<div id="cart_container">
+		<div id="general" class="hidden">
+			<h2 class="title">Pizerria de lux</h2>
+			<h3 class="address">Marrakesh Semlalia</h3>
+			<h3 class="tel">0612312345</h3>
+			<p class="line hidden">-----------------------------------------------------------</p>
+		</div>
+		<div><h4>caissier : <span id="caissier" data-id="1">Mr Youness</span>
+			<br>receipt #<span id="receipt_number">1</span>
+			<br><span class="hidden" id="receipt_time"></span></h4></div>		<div id="cart">
+			<!-- cart items drop here-->
+		</div>
+		<p>total<span id="total">0</span>dh</p>
+		<button type="submit" class="no-print" onclick="get_receipt()">get receipt</button>
+	</div>
+</body>
+</html>
+
