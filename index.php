@@ -1,5 +1,5 @@
 <?php
-	//next code for connectinng to the server
+	//next code tries to connect to the server
 	$db_server = "localhost";
 	$db_user = "root";
 	$db_pass = "";
@@ -7,7 +7,7 @@
 	$conn = "";
 	try{
 		$conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
-	}
+	}//if the connection fails:
 	catch(mysqli_sql_exception $e)
 	{
 		echo"could not connect to database";
