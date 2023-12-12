@@ -30,9 +30,11 @@
 <body>
 	<header>
 		<nav>
+			<a href="index.php" class="logo"><img src="assets/pizzeria_logo.png" alt="logo" class="logo"></a>
 			<a href="index.php">Home</a>
 			<a href="about.html">About Us</a>
 			<a href="help.html">Help</a>
+			<a style="display: hidden;"></a>
 		</nav>
 	</header>
 	<div id="products">
@@ -49,7 +51,7 @@
 			<img src='.$row["p_image"].' class="image" alt="logo">
 			<div class="desc-price">
 				<span class="description">'. $row["p_name"] .'</span>
-				<span class="price">'. $row["p_price"] .'</span>
+				<span class="price">'. $row["p_price"] .'</span> <span class="currency">dh</span>
 			</div>
 			<button class="add-to-cart">add to cart</button>
 		</div>';

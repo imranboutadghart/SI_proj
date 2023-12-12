@@ -24,7 +24,7 @@ function addToCart(event) {
 		cartItem.classList.add('cart_item');
 		cartItem.innerHTML = `
 			<p class="line hidden">-----------------------------------------------------------</p><br>
-			<span class="quantity">1</span> x ${productName} <span class="price">$${price}</span>
+			<span class="quantity">1</span> x ${productName} <span class="price">${price}Dhs</span>
 			<button class="remove-one no-print">Remove One</button>
 			<button class="remove-all no-print">Remove All</button>
 		`;
