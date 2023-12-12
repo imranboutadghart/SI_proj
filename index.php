@@ -51,7 +51,7 @@
 			<img src='.$row["p_image"].' class="image" alt="logo">
 			<div class="desc-price">
 				<span class="description">'. $row["p_name"] .'</span>
-				<span class="price">'. $row["p_price"] .'</span>
+				<span class="price">'. $row["p_price"] .'</span> <span class="currency">dh</span>
 			</div>
 			<button class="add-to-cart">add to cart</button>
 		</div>';
